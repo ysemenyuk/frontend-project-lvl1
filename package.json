@@ -1,0 +1,22 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "projec1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yuriy.s",
+  "license": "ISC",
+  "bin": {
+    "code": "brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysemenyuk/frontend-project-lvl1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ysemenyuk/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/ysemenyuk/frontend-project-lvl1#readme"
+}
