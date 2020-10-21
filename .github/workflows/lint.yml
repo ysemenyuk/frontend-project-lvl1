@@ -1,11 +1,7 @@
 
 name: lint
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: push
 
 jobs:
   lint:
@@ -14,4 +10,5 @@ jobs:
 
     steps:
     - name: lint
+      uses: ysemenyuk/frontend-project-lvl1
     - run: make lint
