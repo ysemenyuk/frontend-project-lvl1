@@ -7,3 +7,7 @@ hexlet-frontend-projext-lvl-1
 ## Brain Even
 
 [![asciicast](https://asciinema.org/a/8jOKtCnwlRL8Be04Pykhwnhcp.svg)](https://asciinema.org/a/8jOKtCnwlRL8Be04Pykhwnhcp)
+
+## Brain Even
+
+<a href="https://asciinema.org/a/8jOKtCnwlRL8Be04Pykhwnhcp" target="_blank"><img src="https://asciinema.org/a/8jOKtCnwlRL8Be04Pykhwnhcp.svg" /></a>
