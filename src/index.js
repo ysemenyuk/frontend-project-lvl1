@@ -12,16 +12,17 @@ const runGame = async (gameTitle, getData) => {
   console.log(gameTitle);
 
   const runRound = async (acc) => {
-    if (acc >= roundCount) {
+    if (acc === roundCount) {
       return console.log(`Congratulations, ${name}!`);
     }
     const roundData = getData();
+    // console.log(roundData);
     const question = getQuestion(roundData);
     const answer = getAnswer(roundData);
     console.log(`Question: ${question}`);
     const userAnswer = await promptly.prompt('Your answer: ');
     if (userAnswer !== answer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}' \nLet's try again, ${name}!`);
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again, ${name}!`);
     }
     console.log('Correct!');
     return runRound(acc + 1);

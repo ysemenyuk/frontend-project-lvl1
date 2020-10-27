@@ -11,8 +11,9 @@
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even-1": "bin/brain-even-1.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even-old": "bin/brain-even-old.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "repository": {
     "type": "git",
