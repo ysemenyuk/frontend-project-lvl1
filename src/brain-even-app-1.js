@@ -15,8 +15,10 @@ const isEven = (num) => {
 };
 
 const foo1 = async () => {
+  console.log('Welcome to the Brain Games!');
   const name = await promptly.prompt('May I have your name? ');
   console.log(`Hello, ${name}!`);
+
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const iter = async (acc) => {

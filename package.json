@@ -10,8 +10,9 @@
   "author": "yuriy.s",
   "license": "ISC",
   "bin": {
-    "brain-even": "bin/brain-even.js",
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even-1": "bin/brain-even-1.js",
+    "brain-even": "bin/brain-even.js"
   },
   "repository": {
     "type": "git",
