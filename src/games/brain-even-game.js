@@ -1,17 +1,11 @@
 import runGame from '../index.js';
-
-const getRandom = (minn, maxx) => {
-  const min = Math.ceil(minn);
-  const max = Math.floor(maxx);
-  return Math.floor(Math.random() * (max - min)) + min;
-};
-
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
+import { getRandom } from '../utils.js';
 
 const getData = () => {
   const number = getRandom(1, 10);
   const question = number;
-  const answer = isEven(number);
+  const isEven = (num) => num % 2 === 0;
+  const answer = isEven(number) ? 'yes' : 'no';
   return { question, answer };
 };
 

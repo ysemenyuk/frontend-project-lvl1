@@ -16,7 +16,7 @@ const runGame = async (gameTitle, getData) => {
       return console.log(`Congratulations, ${name}!`);
     }
     const roundData = getData();
-    // console.log(roundData);
+    console.log(roundData);
     const question = getQuestion(roundData);
     const answer = getAnswer(roundData);
     console.log(`Question: ${question}`);

@@ -1,10 +1,5 @@
 import runGame from '../index.js';
-
-const getRandom = (minn, maxx) => {
-  const min = Math.ceil(minn);
-  const max = Math.floor(maxx);
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+import { getRandom } from '../utils.js';
 
 const getData = () => {
   const num = getRandom(3, 20);
