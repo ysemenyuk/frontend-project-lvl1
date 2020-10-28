@@ -8,8 +8,6 @@ const getRandom = (minn, maxx) => {
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 
-const gameTitle = "Answer 'yes' if the number is even, otherwise answer 'no'";
-
 const getData = () => {
   const number = getRandom(1, 10);
   const question = number;
@@ -17,6 +15,7 @@ const getData = () => {
   return { question, answer };
 };
 
+const gameTitle = 'Answer "yes" if the number is even, otherwise answer "no"';
 const startGame = () => runGame(gameTitle, getData);
 
 export default startGame;

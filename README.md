@@ -11,3 +11,15 @@ hexlet-frontend-projext-lvl-1
 ## Brain Calc
 
 [![asciicast](https://asciinema.org/a/368238.svg)](https://asciinema.org/a/368238)
+
+## Brain Gcd
+
+[![asciicast](https://asciinema.org/a/87yD5MdmSD4z8KQUOivxmyRy2.svg)](https://asciinema.org/a/87yD5MdmSD4z8KQUOivxmyRy2)
+
+## Brain Progression
+
+[![asciicast](https://asciinema.org/a/368502.svg)](https://asciinema.org/a/368502)
+
+## Brain Prime
+
+[![asciicast](https://asciinema.org/a/368503.svg)](https://asciinema.org/a/368503)

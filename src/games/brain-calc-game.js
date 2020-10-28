@@ -11,8 +11,6 @@ const getRandomMathSign = () => {
   return mathSigns[index];
 };
 
-const gameTitle = 'What is the result of the expression?';
-
 const getData = () => {
   const number1 = getRandom(1, 10);
   const number2 = getRandom(1, 10);
@@ -31,6 +29,7 @@ const getData = () => {
   return { question, answer };
 };
 
+const gameTitle = 'What is the result of the expression?';
 const startGame = () => runGame(gameTitle, getData);
 
 export default startGame;
