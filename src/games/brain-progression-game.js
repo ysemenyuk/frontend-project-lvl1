@@ -1,5 +1,7 @@
 import runGame from '../index.js';
-import { getRandom } from '../utils.js';
+import getRandom from '../utils.js';
+
+const gameTitle = 'What number is missing in the progression?';
 
 const getData = () => {
   const numStart = getRandom(1, 20);
@@ -26,7 +28,6 @@ const getData = () => {
   return { question, answer };
 };
 
-const gameTitle = 'What number is missing in the progression?';
 const startGame = () => runGame(gameTitle, getData);
 
 export default startGame;

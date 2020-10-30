@@ -1,9 +1,6 @@
-/* eslint-disable linebreak-style */
 import promptly from 'promptly';
 
 const roundCount = 3;
-const getQuestion = (data) => data.question;
-const getAnswer = (data) => data.answer;
 
 const runGame = async (gameTitle, getData) => {
   console.log('Welcome to the Brain Games!');
@@ -17,12 +14,11 @@ const runGame = async (gameTitle, getData) => {
     }
     const roundData = getData();
     console.log(roundData);
-    const question = getQuestion(roundData);
-    const answer = getAnswer(roundData);
+    const { question, answer } = roundData;
     console.log(`Question: ${question}`);
     const userAnswer = await promptly.prompt('Your answer: ');
     if (userAnswer !== answer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again, ${name}!`);
+      return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}"\nLet's try again, ${name}!`);
     }
     console.log('Correct!');
     return runRound(acc + 1);

@@ -1,5 +1,7 @@
 import runGame from '../index.js';
-import { getRandom } from '../utils.js';
+import getRandom from '../utils.js';
+
+const gameTitle = 'Find the greatest common divisor of given numbers.';
 
 const getData = () => {
   const num1 = getRandom(1, 50);
@@ -25,7 +27,6 @@ const getData = () => {
   return { question, answer };
 };
 
-const gameTitle = 'Find the greatest common divisor of given numbers.';
 const startGame = () => runGame(gameTitle, getData);
 
 export default startGame;
