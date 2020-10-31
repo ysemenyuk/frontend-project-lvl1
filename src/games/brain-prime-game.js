@@ -4,21 +4,19 @@ import getRandom from '../utils.js';
 const gameTitle = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number, acc = 2) => {
-  if (acc === number) {
-    return 'yes';
+  if (number === 1 || number % acc === 0) {
+    return false;
   }
-  if (number % acc === 0) {
-    return 'no';
+  if (number === acc) {
+    return true;
   }
   return isPrime(number, acc + 1);
 };
 
 const getData = () => {
-  const number = getRandom(3, 20);
+  const number = getRandom(1, 20);
   const question = number.toString();
-  // console.log(question);
-  const answer = isPrime(number);
-  // console.log(answer);
+  const answer = isPrime(number) ? 'yes' : 'no';
   return { question, answer };
 };
 

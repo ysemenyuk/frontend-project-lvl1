@@ -4,7 +4,7 @@ const roundCount = 3;
 
 const runGame = async (gameTitle, getData) => {
   console.log('Welcome to the Brain Games!');
-  const name = await promptly.prompt('May I have your name? ');
+  const name = await promptly.prompt('May I have your name? ', { default: 'Player' });
   console.log(`Hello, ${name}!`);
   console.log(gameTitle);
 

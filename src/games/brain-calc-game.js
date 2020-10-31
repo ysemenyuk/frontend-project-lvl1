@@ -1,28 +1,31 @@
 import runGame from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const gameTitle = 'What is the result of the expression?';
+const getRandomMathSign = () => {
+  const mathSigns = ['+', '-', '*', '/'];
+  const randomIndex = getRandomNumber(0, 3);
+  return mathSigns[randomIndex];
+};
+const calculate = (number1, number2, mathSign) => {
+  if (mathSign === '+') {
+    return number1 + number2;
+  }
+  if (mathSign === '-') {
+    return number1 - number2;
+  }
+  if (mathSign === '*') {
+    return number1 * number2;
+  }
+  return number1 / number2;
+};
 
 const getData = () => {
-  const number1 = getRandom(1, 10);
-  const number2 = getRandom(1, 10);
-  const randomIndex = getRandom(1, 4);
-  // console.log(number1, number2, randomIndex);
-  let question = '';
-  let answer = '';
-  if (randomIndex === 1) {
-    question = `${number1} + ${number2}`;
-    answer = (number1 + number2).toString();
-  } else if (randomIndex === 2) {
-    question = `${number1} - ${number2}`;
-    answer = (number1 - number2).toString();
-  } else if (randomIndex === 3) {
-    question = `${number1} * ${number2}`;
-    answer = (number1 * number2).toString();
-  } else if (randomIndex === 4) {
-    question = `${number1} / ${number2}`;
-    answer = (number1 / number2).toString();
-  }
+  const number1 = getRandomNumber(1, 10);
+  const number2 = getRandomNumber(1, 10);
+  const mathSign = getRandomMathSign();
+  const question = `${number1} ${mathSign} ${number2}`;
+  const answer = calculate(number1, number2, mathSign).toString();
   return { question, answer };
 };
 
