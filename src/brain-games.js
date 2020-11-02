@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import promptly from 'promptly';
 
 export default async () => {

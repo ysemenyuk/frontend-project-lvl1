@@ -1,3 +1,4 @@
-const getRandomNumber = (min = 1, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export default getRandomNumber;
+// eslint-disable-next-line import/prefer-default-export
+export { getRandomNumber };

@@ -1,30 +1,26 @@
 import runGame from '../index.js';
-import getRandom from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const gameTitle = 'What number is missing in the progression?';
 
+const getArray = (first, length, missing, acc = 0, array = []) => {
+  if (acc === length) {
+    return array;
+  }
+  if (acc === missing) {
+    array.push('..');
+  } else {
+    array.push(first + acc);
+  }
+  return getArray(first, length, missing, acc + 1, array);
+};
+
 const getData = () => {
-  const numStart = getRandom(1, 20);
-  const numLength = getRandom(6, 9);
-  const numMiss = getRandom(1, numLength);
-  // console.log(numStart, numLength, numMiss)
-  const iter = (acc, arr) => {
-    if (acc === numLength) {
-      return arr;
-    }
-    if (acc === numMiss) {
-      arr.push('..');
-    } else {
-      arr.push(numStart + acc);
-    }
-    return iter(acc + 1, arr);
-  };
-  const question = iter(1, []).join(' ');
-  // console.log(question);
-
-  const answer = (numStart + numMiss).toString();
-  // console.log(answer);
-
+  const firstNumber = getRandomNumber(1, 20);
+  const arrayLength = getRandomNumber(6, 9);
+  const missingNumber = getRandomNumber(0, arrayLength - 1);
+  const question = getArray(firstNumber, arrayLength, missingNumber).join(' ');
+  const answer = (firstNumber + missingNumber).toString();
   return { question, answer };
 };
 
