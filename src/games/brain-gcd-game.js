@@ -5,16 +5,14 @@ const gameTitle = 'Find the greatest common divisor of given numbers.';
 
 const findGreatestCommonDivisor = (num1, num2) => {
   const iter = (acc, divisor) => {
-    if (acc === num1 || acc === num2) {
-      if (num1 % acc === 0 && num2 % acc === 0) {
-        return acc;
-      }
-      return divisor;
-    }
+    let newDivisor = divisor;
     if (num1 % acc === 0 && num2 % acc === 0) {
-      return iter(acc + 1, acc);
+      newDivisor = acc;
     }
-    return iter(acc + 1, divisor);
+    if (acc === num1 || acc === num2) {
+      return newDivisor;
+    }
+    return iter(acc + 1, newDivisor);
   };
   return iter(1, 1);
 };

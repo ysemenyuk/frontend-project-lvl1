@@ -22,7 +22,7 @@ const calculate = (number1, number2, mathSign) => {
   if (mathSign === '/') {
     return number1 / number2;
   }
-  return false;
+  return 'error';
 };
 
 const getData = () => {
