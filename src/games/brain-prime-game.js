@@ -3,14 +3,17 @@ import { getRandomNumber } from '../utils.js';
 
 const gameTitle = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const isPrime = (number, acc = 2) => {
-  if (number === 1 || number % acc === 0) {
-    return false;
-  }
-  if (number === acc) {
-    return true;
-  }
-  return isPrime(number, acc + 1);
+const isPrime = (number) => {
+  const iter = (acc) => {
+    if (number === acc) {
+      return true;
+    }
+    if (number % acc === 0 || number === 1) {
+      return false;
+    }
+    return iter(acc + 1);
+  };
+  return iter(2);
 };
 
 const getData = () => {
