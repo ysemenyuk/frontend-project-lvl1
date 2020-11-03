@@ -8,21 +8,22 @@ const runGame = async (gameTitle, getData) => {
   console.log(`Hello, ${name}!`);
   console.log(gameTitle);
 
-  const runRound = async (count) => {
+  const runRounds = async (count) => {
     if (count === 0) {
       return console.log(`Congratulations, ${name}!`);
     }
     const { question, answer } = getData();
     console.log(`Question: ${question}`);
+    console.log(answer);
     const userAnswer = await promptly.prompt('Your answer: ');
     if (userAnswer !== answer) {
       return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}"\nLet's try again, ${name}!`);
     }
     console.log('Correct!');
-    return runRound(count - 1);
+    return runRounds(count - 1);
   };
 
-  return runRound(roundCount);
+  return runRounds(roundCount);
 };
 
 export default runGame;

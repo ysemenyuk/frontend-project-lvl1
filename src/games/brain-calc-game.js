@@ -4,8 +4,8 @@ import { getRandomNumber } from '../utils.js';
 const gameTitle = 'What is the result of the expression?';
 
 const getRandomMathSign = () => {
-  const mathSigns = ['+', '-', '*', '/'];
-  const randomIndex = getRandomNumber(0, 3);
+  const mathSigns = ['+', '-', '*'];
+  const randomIndex = getRandomNumber(0, 2);
   return mathSigns[randomIndex];
 };
 
@@ -13,15 +13,12 @@ const calculate = (number1, number2, mathSign) => {
   let result = 0;
   if (mathSign === '+') {
     result = number1 + number2;
-  }
-  if (mathSign === '-') {
+  } else if (mathSign === '-') {
     result = number1 - number2;
-  }
-  if (mathSign === '*') {
+  } else if (mathSign === '*') {
     result = number1 * number2;
-  }
-  if (mathSign === '/') {
-    result = number1 / number2;
+  } else {
+    return false;
   }
   return result;
 };
