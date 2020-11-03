@@ -10,19 +10,20 @@ const getRandomMathSign = () => {
 };
 
 const calculate = (number1, number2, mathSign) => {
+  let result = 0;
   if (mathSign === '+') {
-    return number1 + number2;
+    result = number1 + number2;
   }
   if (mathSign === '-') {
-    return number1 - number2;
+    result = number1 - number2;
   }
   if (mathSign === '*') {
-    return number1 * number2;
+    result = number1 * number2;
   }
   if (mathSign === '/') {
-    return number1 / number2;
+    result = number1 / number2;
   }
-  return 'error';
+  return result;
 };
 
 const getData = () => {

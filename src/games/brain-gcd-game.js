@@ -4,17 +4,13 @@ import { getRandomNumber } from '../utils.js';
 const gameTitle = 'Find the greatest common divisor of given numbers.';
 
 const findGreatestCommonDivisor = (num1, num2) => {
-  const iter = (acc, divisor) => {
-    let newDivisor = divisor;
-    if (num1 % acc === 0 && num2 % acc === 0) {
-      newDivisor = acc;
+  let divisor = 1;
+  for (let i = 1; i <= num1 || i <= num2; i += 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      divisor = i;
     }
-    if (acc === num1 || acc === num2) {
-      return newDivisor;
-    }
-    return iter(acc + 1, newDivisor);
-  };
-  return iter(1, 1);
+  }
+  return divisor;
 };
 
 const getData = () => {
