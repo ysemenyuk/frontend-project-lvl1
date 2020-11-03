@@ -17,8 +17,8 @@ const getQuestionArray = (first, last, missing) => {
 
 const getData = () => {
   const firstNumber = getRandomNumber(1, 20);
-  const arrayLength = getRandomNumber(6, 8);
-  const lastNumber = firstNumber + arrayLength;
+  const progressionLength = getRandomNumber(6, 8);
+  const lastNumber = firstNumber + progressionLength;
   const missingNumber = getRandomNumber(firstNumber, lastNumber);
   console.log(firstNumber, lastNumber, missingNumber);
   const question = getQuestionArray(firstNumber, lastNumber, missingNumber).join(' ');
