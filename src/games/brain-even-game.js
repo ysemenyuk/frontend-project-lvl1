@@ -12,6 +12,4 @@ const getData = () => {
   return { question, answer };
 };
 
-const startGame = () => runGame(gameTitle, getData);
-
-export default startGame;
+export default () => runGame(gameTitle, getData);

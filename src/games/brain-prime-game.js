@@ -4,7 +4,7 @@ import { getRandomNumber } from '../utils.js';
 const gameTitle = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number) => {
-  if (number === 1) {
+  if (number <= 1) {
     return false;
   }
   for (let i = 2; i < number; i += 1) {
@@ -22,6 +22,4 @@ const getData = () => {
   return { question, answer };
 };
 
-const startGame = () => runGame(gameTitle, getData);
-
-export default startGame;
+export default () => runGame(gameTitle, getData);

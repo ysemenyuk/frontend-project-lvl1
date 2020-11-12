@@ -1,6 +1,6 @@
 import promptly from 'promptly';
 
-const roundCount = 3;
+const roundCount = 10;
 
 const runGame = async (gameTitle, getData) => {
   console.log('Welcome to the Brain Games!');
@@ -8,8 +8,8 @@ const runGame = async (gameTitle, getData) => {
   console.log(`Hello, ${name}!`);
   console.log(gameTitle);
 
-  const runRounds = async (count) => {
-    if (count === 0) {
+  const runRounds = async (round) => {
+    if (round === 0) {
       return console.log(`Congratulations, ${name}!`);
     }
     const { question, answer } = getData();
@@ -20,7 +20,7 @@ const runGame = async (gameTitle, getData) => {
       return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}"\nLet's try again, ${name}!`);
     }
     console.log('Correct!');
-    return runRounds(count - 1);
+    return runRounds(round - 1);
   };
 
   return runRounds(roundCount);

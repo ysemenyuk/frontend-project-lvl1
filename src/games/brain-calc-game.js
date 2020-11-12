@@ -4,34 +4,37 @@ import { getRandomNumber } from '../utils.js';
 const gameTitle = 'What is the result of the expression?';
 
 const getRandomMathSign = () => {
-  const mathSigns = ['+', '-', '*'];
+  const operators = ['+', '-', '*'];
   const randomIndex = getRandomNumber(0, 2);
-  return mathSigns[randomIndex];
+  return operators[randomIndex];
 };
 
-const calculate = (number1, number2, mathSign) => {
+const calculate = (number1, number2, operator) => {
   let result = 0;
-  if (mathSign === '+') {
-    result = number1 + number2;
-  } else if (mathSign === '-') {
-    result = number1 - number2;
-  } else if (mathSign === '*') {
-    result = number1 * number2;
-  } else {
-    return false;
+  switch (operator) {
+    case '+':
+      result = number1 + number2;
+      break;
+    case '-':
+      result = number1 - number2;
+      break;
+    case '*':
+      result = number1 * number2;
+      break;
+    default:
+      throw new Error(`Unknown operator '${operator}'!`);
   }
+
   return result;
 };
 
 const getData = () => {
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
-  const mathSign = getRandomMathSign();
-  const question = `${number1} ${mathSign} ${number2}`;
-  const answer = calculate(number1, number2, mathSign).toString();
+  const operator = getRandomMathSign();
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = calculate(number1, number2, operator).toString();
   return { question, answer };
 };
 
-const startGame = () => runGame(gameTitle, getData);
-
-export default startGame;
+export default () => runGame(gameTitle, getData);
