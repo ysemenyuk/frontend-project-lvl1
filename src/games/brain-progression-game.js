@@ -17,13 +17,13 @@ const getData = () => {
       missingNumber.push(firstNumber + progressionStep * i);
       progressionWithMissingNumber.push('..');
     } else {
-      progressionWithMissingNumber.push(firstNumber + progressionStep * i)
+      progressionWithMissingNumber.push(firstNumber + progressionStep * i);
     }
   }
 
   const question = progressionWithMissingNumber.join(' ');
   const answer = missingNumber.toString();
-  
+
   return { question, answer };
 };
 
