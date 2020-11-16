@@ -5,27 +5,21 @@ const gameTitle = 'What is the result of the expression?';
 
 const getRandomMathSign = () => {
   const operators = ['+', '-', '*'];
-  const randomIndex = getRandomNumber(0, 2);
+  const randomIndex = getRandomNumber(0, operators.length - 1);
   return operators[randomIndex];
 };
 
 const calculate = (number1, number2, operator) => {
-  let result = 0;
   switch (operator) {
     case '+':
-      result = number1 + number2;
-      break;
+      return number1 + number2;
     case '-':
-      result = number1 - number2;
-      break;
+      return number1 - number2;
     case '*':
-      result = number1 * number2;
-      break;
+      return number1 * number2;
     default:
       throw new Error(`Unknown operator '${operator}'!`);
   }
-
-  return result;
 };
 
 const getData = () => {
